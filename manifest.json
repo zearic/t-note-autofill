@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Auto-Fill T Note Form",
+    "version": "1.0",
+    "description": "Auto-fill the T Note form with client and treatment details.",
+    "permissions": ["activeTab", "scripting"],
+
+    "content_scripts": [
+      {
+        "matches": ["https://somesite.com/*"],
+        "js": ["contentScript.js"]
+      }
+    ]
+  }
+  
