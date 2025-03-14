@@ -7,7 +7,7 @@
 
     "content_scripts": [
       {
-        "matches": ["https://somesite.com/*"],
+        "matches": ["https://backoffice.kingthaimassage.com/*"],
         "js": ["autofillForm.js", "readValues.js", "treatmentType.js", "contentScript.js"]
       }
     ]

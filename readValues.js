@@ -19,12 +19,21 @@ function readValues() {
     // If the view_doc_btn link exists, replace it with an image
     if (viewDocBtn) {
       const href = viewDocBtn.href;
-      const img = document.createElement('img');
-      img.src = href;
-      img.alt = 'Document';
-      img.style.width = '100%';
-      img.style.height = 'auto';
-      viewDocBtn.replaceWith(img);
+      const fileExtension = href.split('.').pop().toLowerCase();
+      if (fileExtension === 'pdf') {
+        const iframe = document.createElement('iframe');
+        iframe.src = href;
+        iframe.style.width = '100%';
+        iframe.style.height = '500px'; // Set a fixed height for the PDF viewer
+        dataDiv.insertBefore(iframe, viewDocBtn);
+      } else {
+        const img = document.createElement('img');
+        img.src = href;
+        img.alt = 'Document';
+        img.style.width = '100%';
+        img.style.height = 'auto';
+        dataDiv.insertBefore(img, viewDocBtn);
+      }
     }
 
     // If the T Note link exists, append the query parameters
