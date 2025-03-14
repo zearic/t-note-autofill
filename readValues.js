@@ -14,6 +14,18 @@ function readValues() {
 
     // Find the T Note link within the current div
     const tNoteLink = dataDiv.querySelector('a[href*="treatment-note.php"]');
+    // Find the view_doc_btn link within the current div
+    const viewDocBtn = dataDiv.querySelector('a.view_doc_btn');
+    // If the view_doc_btn link exists, replace it with an image
+    if (viewDocBtn) {
+      const href = viewDocBtn.href;
+      const img = document.createElement('img');
+      img.src = href;
+      img.alt = 'Document';
+      img.style.width = '100%';
+      img.style.height = 'auto';
+      viewDocBtn.replaceWith(img);
+    }
 
     // If the T Note link exists, append the query parameters
     if (tNoteLink) {
