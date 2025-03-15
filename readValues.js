@@ -14,8 +14,8 @@ function readValues() {
 
     // Find the T Note link within the current div
     const tNoteLink = dataDiv.querySelector('a[href*="treatment-note.php"]');
-    // Find the view_doc_btn link within the current div
-    const viewDocBtn = dataDiv.querySelector('a.view_doc_btn');
+    // Find the View Doc link within the current div. it contains text "View Doc"
+    const viewDocBtn = dataDiv.querySelector('a[href*="uploads"]');
     // If the view_doc_btn link exists, replace it with an image
     if (viewDocBtn) {
       const href = viewDocBtn.href;
